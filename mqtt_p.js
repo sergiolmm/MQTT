@@ -38,7 +38,7 @@ function connect(){
    // if (location.protocol == 'https:') {
    //port = 8081;
    // }
-    var clientId  = "mqtt_js_" + parseInt(Math.random() * 100000, 10);
+    var clientId  = "mqtt_p_js_" + parseInt(Math.random() * 100000, 10);
     mqtt = new Paho.MQTT.Client(host,port, clientId);
     var options ={
         timeout :3,

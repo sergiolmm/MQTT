@@ -34,7 +34,8 @@ function onMessageArrived(msg ){
 
 function connect(){
     console.log("Iniciando mqtt");
-    mqtt = new Paho.MQTT.Client(host,port,"clientjs");
+    var clientId  = "mqtt_js_" + parseInt(Math.random() * 100000, 10);
+    mqtt = new Paho.MQTT.Client(host,port, clientId);
     var options ={
         timeout :3,
         onSuccess: onConnect,    
