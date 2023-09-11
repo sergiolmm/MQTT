@@ -4,7 +4,7 @@ import esp
 esp.osdebug(None)
 import gc
 gc.collect()
-import publicar
+import assinar
 
 print("Connecting to WiFi", end="")
 station = network.WLAN(network.STA_IF)

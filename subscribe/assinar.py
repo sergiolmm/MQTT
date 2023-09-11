@@ -24,13 +24,16 @@ class Assinar:
   def sub_cb(self,topic, msg):
     print((topic, msg))
     # aqui verifica a mensaem enviada
-    dados = json.loads(msg.decode())
-    print(dados)
+    try:
+        dados = json.loads(msg.decode())
+        print(dados)
 
-    if topic == b'hello' and dados['cmd'] == 'on':
-      self.led.value(1)
-    if topic == b'hello' and dados['cmd'] == 'off':  
-      self.led.value(0)
+        if topic == b'hello' and dados['cmd'] == 'on':
+          self.led.value(1)
+        if topic == b'hello' and dados['cmd'] == 'off':  
+          self.led.value(0)
+    except:
+        print('Mensagem não valida')
   
   
   def connect_and_subscribe(self):
